@@ -3,18 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>City Explorer</title>
+  <title>India City Explorer | Discover Indian Cities</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🌍 City Explorer</h1>
-    <input type="text" id="cityInput" placeholder="Enter a city..." />
-    <button onclick="searchCity()">Search</button>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-content">
+        <div class="logo-container">
+          <h1 class="app-title">BharatDarshan</h1>
+        </div>
+        <p class="app-tagline">Explore the diversity of Indian cities</p>
+      </div>
+    </header>
 
-    <div id="cityInfo" class="card"></div>
-    <div id="weatherInfo" class="card"></div>
+    <main class="main-content">
+      <div class="search-container">
+        <div class="search-box" id="searchBox">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="cityInput" placeholder="Search Indian cities (e.g. Mumbai, Delhi, Bangalore)" class="search-input" />
+          <button onclick="searchCity()" class="search-button" id="searchButton">
+            <span class="button-text">Search</span>
+            <i class="fas fa-search button-icon"></i>
+          </button>
+        </div>
+        <p class="search-hint">Currently serving 100+ Indian cities</p>
+      </div>
+
+      <div class="results-container">
+        <div id="cityInfo" class="info-card city-card">
+          <div class="card-header">
+            <h2 class="card-title"><i class="fas fa-city"></i> City Profile</h2>
+            <div class="card-actions">
+              <button class="action-button"><i class="fas fa-map-marked-alt"></i></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="placeholder-content">
+              <i class="fas fa-search-location placeholder-icon"></i>
+              <p>Search for an Indian city to discover its details</p>
+            </div>
+            <div class="dynamic-content" id="cityDynamicContent"></div>
+          </div>
+        </div>
+
+        <div id="weatherInfo" class="info-card weather-card">
+          <div class="card-header">
+            <h2 class="card-title"><i class="fas fa-cloud-sun"></i> Weather</h2>
+          </div>
+          <div class="card-content">
+            <div class="placeholder-content">
+              <i class="fas fa-umbrella placeholder-icon"></i>
+              <p>Weather information will appear here</p>
+            </div>
+            <div class="dynamic-content" id="weatherDynamicContent"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>© 2025 BharatDarshan | Made with ❤️ by Mayank Gupta</p>
+
+    </footer>
   </div>
+
   <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
